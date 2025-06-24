@@ -2,7 +2,7 @@ import logo from './img/Logo.png';
 
 const Navbar = () => {
     return ( 
-            <nav class="premium-nav">
+            <nav class="nice-outside-nav">
         <div class="nav-container">
             <a href="" class="nav-logo">
                 <img src={logo} class="logo-size" alt="wewe" />

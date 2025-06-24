@@ -19,10 +19,9 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--dark-text-color);
-    transition: background-color 0.3s, color 0.3s;
 }
 
-.premium-nav {
+.nice-outside-nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -30,7 +29,6 @@ body {
     backdrop-filter: blur(20px);
     background: var(--bg-black);
     height: 5rem;
-    box-shadow: var(--nav-shadow);
     z-index: 1000;
 }
 
@@ -45,14 +43,16 @@ body {
     gap: 2rem;
 }
 
+.logo-size{
+  height: 41px;
+  width: 40px;
+}
+
 .nav-logo {
-    position: relative;
     display: flex;
     align-items: center;
     text-decoration: none;
     padding: 0.75rem 1.25rem;
-    border-radius: 12px;
-    overflow: visible;
     transition: all 0.3s ease;
 }
 
@@ -63,35 +63,7 @@ body {
 .logo-text {
     font-size: 1.5rem;
     letter-spacing: -0.5px;
-    background-size: 200% 200%;
     color: var(--dark-text-color);
-    animation: gradientFlow 8s ease infinite;
-}
-
-.logo-size{
-  height: 41px;
-  width: 40px;
-}
-
-.logo-shine {
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    right: -100%;
-    bottom: -100%;
-    background: linear-gradient(
-        45deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.15) 50%,
-        transparent 100%
-    );
-    transform: translateX(-100%) rotate(45deg);
-    animation: none;
-    pointer-events: none;
-}
-
-.nav-logo:hover .logo-shine {
-    animation: shineLogo 1s ease forwards;
 }
 
 .nav-links {
@@ -106,7 +78,6 @@ body {
     text-decoration: none;
     position: relative;
     padding: 0.5rem 1rem;
-    border-radius: 8px;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -117,25 +88,7 @@ body {
     font-size: 1rem;
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: width 0.3s;
-}
-
-
-/* .nav-link.active::after {
-    width: 100%;
-    
-} */
-
 .nav-link:hover {
-    background: var(--button-bg);
     transform: translateY(-1px);
 }
 
@@ -148,25 +101,19 @@ body {
     background: var(--bg-white);
     color: var(--primary-color);
     cursor: pointer;
-    padding: 0.5rem;
     font-size: 1rem;
     width: 9.375rem;
     height: 2.5rem;
     border-radius: 20px;
     border: 2px solid var(--primary-color);
     transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    
 }
 
 .button-style:hover {
     transform: translateY(-1px);
     
-}
-
-.button-style i {
-    transition: transform 0.3s, opacity 0.3s;
-    position: absolute;
-    font-size: 1.25rem;
-    color: var(--primary-color);
 }
 
 .nav-actions {
@@ -175,19 +122,3 @@ body {
     gap: 1rem;
     padding: 1rem 2.5rem
 }
-
-@keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-@keyframes shineLogo {
-    0% {
-        transform: translateX(-100%) rotate(45deg);
-    }
-    100% {
-        transform: translateX(200%) rotate(45deg);
-    }
-}
-
