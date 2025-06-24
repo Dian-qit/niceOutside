@@ -6,6 +6,10 @@
 
 🔗 [https://nice-outside.vercel.app/](https://nice-outside.vercel.app/)
 
+## 🎨 Design (Figma)
+
+🔗 [View on Figma](https://www.figma.com/design/sX98ce0Sxmqvg4fPJ2Oovs/NiceOutside?node-id=3-3&t=kweDVQfzo4LyZMcs-1)
+
 ## Introduction
 
 **NiceOutside** is a weather web application built using **ReactJS** and styled with **custom CSS**. It provides real-time weather updates along with curated weather-related news using **API** to keep users informed and engaged. The project focuses on clarity, usability, and a calming aesthetic.
