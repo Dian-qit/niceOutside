@@ -30,9 +30,6 @@ const Navbar = () => {
                 <button class="button-style bold-text" aria-label="Toggle theme">
                     Check Weather
                 </button>
-                <button class="mobile-menu" aria-label="Menu">
-                    <i class="ri-menu-line"></i>
-                </button>
             </div>
         </div>
     </nav>
