@@ -1,0 +1,42 @@
+import logo from './img/Logo.png';
+
+const Navbar = () => {
+    return ( 
+            <nav class="premium-nav">
+        <div class="nav-container">
+            <a href="" class="nav-logo">
+                <img src={logo} class="logo-size" alt="wewe" />
+                <span class="logo-text bold-text">NiceOutside</span>
+                <div class="logo-shine"></div>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#" class="nav-link active">
+                    <i class="ri-home-5-line"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="ri-information-line"></i>
+                    <span>News</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="ri-stack-line"></i>
+                    <span>About</span>
+                </a>
+                
+            </div>
+
+            <div class="nav-actions">
+                <button class="button-style bold-text" aria-label="Toggle theme">
+                    Check Weather
+                </button>
+                <button class="mobile-menu" aria-label="Menu">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+     );
+}
+ 
+export default Navbar;
