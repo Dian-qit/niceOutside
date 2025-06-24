@@ -2,13 +2,16 @@
 
 **Disclaimer:** This project is currently not optimized for mobile or small screen devices.
 
+
 ## 🌐 Live Site
 
 🔗 [https://nice-outside.vercel.app/](https://nice-outside.vercel.app/)
 
+
 ## 🎨 Design (Figma)
 
 🔗 [View on Figma](https://www.figma.com/design/sX98ce0Sxmqvg4fPJ2Oovs/NiceOutside?node-id=3-3&t=kweDVQfzo4LyZMcs-1)
+
 
 ## Introduction
 
