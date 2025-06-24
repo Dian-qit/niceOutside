@@ -1,6 +1,6 @@
 # NiceOutside 🌤️
 
-**Disclaimer:** This project is currently not optimized for mobile or small screen devices.
+**Disclaimer:** This project is currently under development .
 
 ## 🌐 Live Site
 
