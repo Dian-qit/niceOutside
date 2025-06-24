@@ -12,7 +12,7 @@
 
 ## Introduction
 
-**NiceOutside** is a weather web application built using **ReactJS** and styled with **custom CSS**. It provides real-time weather updates along with curated weather-related news using **API** to keep users informed and engaged. The project focuses on clarity, usability, and a calming aesthetic.
+**NiceOutside** is a weather web application built using **ReactJS*. It provides real-time weather updates along with curated weather-related news using **API** to keep users informed and engaged. The project focuses on clarity, and usability.
 
 ## Features
 
