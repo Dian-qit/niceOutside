@@ -7,9 +7,15 @@
     --bg-color: #F5FAFF;
     --bg-black: rgba(0, 0, 0, 0.1);
     --bg-white: rgba(255, 255, 255, 0.1);
-    
+    --background-img: url(img/clear-day.jpg);
 }
 
+.brand-color,
+.brand-color-text{ color: var(--primary-color);}
+.size-body{ font-size: 1rem;}
+.size-subtite{ font-size: 1.25rem;}
+.size-large-title{ font-size: 2.5rem;}
+.size-display{ font-size: 3.625rem;}
 .medium-text { font-weight: 500; }
 .semibold-text { font-weight: 600; }
 .bold-text { font-weight: 700; }
@@ -84,10 +90,6 @@ body {
     gap: 0.5rem;
 }
 
-.nav-link i {
-    font-size: 1rem;
-}
-
 .nav-link:hover {
     transform: translateY(-1px);
 }
@@ -120,5 +122,54 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem 2.5rem
+    padding: 1rem 1rem
+}
+
+.background{
+  background-image: var(--background-img);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center; 
+  background-position: bottom center;
+  height: 450px;
+  
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  background-size: cover;
+  background-position: center;
+  height: 30rem;
+  padding: 0 2rem;
+  margin: 0 auto;
+  justify-content: space-between;
+
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.left-side {
+  flex: 1;
+  padding: 0 .75rem ;
+}
+
+.right-side {
+  flex: 0 0 auto;
+  padding: 0 .75rem;
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 360px;
 }

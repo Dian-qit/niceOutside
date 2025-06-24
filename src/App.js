@@ -1,4 +1,5 @@
 
+import Home from './Home';
 import Navbar from './Navbar';
 
 
@@ -8,7 +9,7 @@ function App() {
       <Navbar />
       <header className="App-header">
         
-        Hello
+        <Home />
         
       </header>
     </div>
