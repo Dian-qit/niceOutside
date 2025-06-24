@@ -1,6 +1,6 @@
 # NiceOutside 🌤️
 
-**Disclaimer:** This project is currently under development .
+**Disclaimer:** This project is currently under development and not responsive.
 
 ## 🌐 Live Site
 
