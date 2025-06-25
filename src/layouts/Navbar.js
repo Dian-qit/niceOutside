@@ -1,10 +1,13 @@
+import BrandLogo from "../components/BrandLogo";
 import logo from '../assets/img/Logo.png';
 
 const Navbar = () => {
     return ( 
-            <nav class="nice-outside-nav">
+            <div className="nav-bar">
+                <nav class="nice-outside-nav">
                 <div class="nav-container">
-                    <a href="" class="nav-logo">
+                   
+                   <a href="#" class="nav-logo">
                         <img src={logo} class="logo-size" alt="wewe" />
                         <span class="logo-text bold-text">NiceOutside</span>
                     </a>
@@ -32,6 +35,7 @@ const Navbar = () => {
                     </div>
                 </div>
              </nav>
+            </div>
      );
 }
  

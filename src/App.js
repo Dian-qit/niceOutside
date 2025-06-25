@@ -1,4 +1,5 @@
 
+import Footer from './layouts/Footer';
 import Home from './layouts/Home';
 import Navbar from './layouts/Navbar';
 
@@ -11,7 +12,13 @@ function App() {
         <Home />
         
       </header>
+
+      <Footer />
+      
     </div>
+
+      
+
   );
 }
 

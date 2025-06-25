@@ -19,7 +19,7 @@ const Home = () => {
                         </div>
 
                         <div class="right-side">
-                            <WeatherCard />
+                            {/* <WeatherCard /> */}
                         </div>
                     </div>
                 </div>
