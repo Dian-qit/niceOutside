@@ -1,4 +1,4 @@
-import logo from './img/Logo.png';
+import logo from '../assets/img/Logo.png';
 
 const Navbar = () => {
     return ( 
@@ -7,7 +7,6 @@ const Navbar = () => {
                     <a href="" class="nav-logo">
                         <img src={logo} class="logo-size" alt="wewe" />
                         <span class="logo-text bold-text">NiceOutside</span>
-                        <div class="logo-shine"></div>
                     </a>
                     
                     <div class="nav-links">

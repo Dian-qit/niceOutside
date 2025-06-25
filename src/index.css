@@ -7,7 +7,7 @@
     --bg-color: #F5FAFF;
     --bg-black: rgba(0, 0, 0, 0.1);
     --bg-white: rgba(255, 255, 255, 0.1);
-    --background-img: url(img/clear-day.jpg);
+    --background-img: url(assets/img/clear-day.jpg);
 }
 
 .brand-color,

@@ -1,7 +1,6 @@
 
-import Home from './Home';
-import Navbar from './Navbar';
-
+import Home from './layouts/Home';
+import Navbar from './layouts/Navbar';
 
 function App() {
   return (
