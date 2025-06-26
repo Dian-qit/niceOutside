@@ -1,36 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import { useFetch } from "../hooks/useFetch";
 
 const WeatherCard = () => {
     const apiKey = process.env.REACT_APP_WEATHER_KEY;
-    const [weatherData, setWeatherData] = useState(null);
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=Manila&appid=${apiKey}`;
     
-    useEffect(() => {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=Manila&appid=${apiKey}`;
-                
-        fetch(url)
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                console.log(data);
-                setWeatherData(data);
-            })
-    }, []);
+    const { data: weatherData, loading, error } = useFetch(url);
 
     return ( 
         <div className="weather-card">
+            {loading && <p>Loading...</p>}
+            {error && <p style={{ color: "red" }}>{error}</p>}
             {weatherData ? (
-                                    <>
-                                        <h3>{weatherData.name}</h3>
-                                        <p>
-                                            {(weatherData.main.temp - 273.15).toFixed(1)}°C - {weatherData.weather[0].main}
-                                        </p>
-                                    </>
-                                ) : (
-                                    <p>Loading...</p>
-                                )}
+                <>
+                    <h3>{weatherData.name}</h3>
+                    <p>
+                        {(weatherData.main.temp - 273.15).toFixed(1)}°C - {weatherData.weather[0].main}
+                    </p>
+                </>
+            ) : (
+                !loading && <p>No weather data available</p>
+            )}
         </div>
-     );
+    );
+     
 }
  
 export default WeatherCard;

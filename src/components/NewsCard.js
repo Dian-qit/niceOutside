@@ -1,30 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useFetch } from "../hooks/useFetch";
 
 const NewsCard = () => {
     const apiKey = process.env.REACT_APP_NEWS_KEY;
-    const [articles, setArticles] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const url = `https://newsapi.org/v2/top-headlines?q=Weather&sortBy=publishedAt&apiKey=${apiKey}`;
-
-        fetch(url)
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error("Failed to fetch news");
-                }
-                return res.json();
-            })
-            .then((data) => {
-                setArticles(data.articles);
-                setLoading(false);
-            })
-            .catch((err) => {
-                setError(err.message);
-                setLoading(false);
-            });
-    }, []);
+    const url = `https://newsapi.org/v2/top-headlines?q=Weather&sortBy=publishedAt&apiKey=${apiKey}`;
+    
+    const { data, loading, error } = useFetch(url);
+    const articles = data?.articles || [];
 
     return (
         <div className="news-card">
@@ -42,6 +23,6 @@ const NewsCard = () => {
                 ))}
         </div>
     );
-};
-
+}
+ 
 export default NewsCard;
