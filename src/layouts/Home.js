@@ -1,4 +1,5 @@
 // import clearDay from './img/clear-day.jpg';
+import NewsCard from "../components/NewsCard";
 import WeatherCard from "../components/WeatherCard";
 
 
@@ -19,11 +20,17 @@ const Home = () => {
                         </div>
 
                         <div class="right-side">
-                            {/* <WeatherCard /> */}
+                            <WeatherCard />
                         </div>
                     </div>
                 </div>
             </div>   
+            <div className="news-section">
+                <div className="new-content">
+                    <h1>Latest News</h1>
+                    <NewsCard />
+                </div>
+            </div>
 
         </div>
      );
