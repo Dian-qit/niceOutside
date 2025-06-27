@@ -28,7 +28,7 @@ export const useFetch = (url, options = {}) => {
     } finally {
       setLoading(false);
     }
-  }, [url, JSON.stringify(options)]);
+  }, [url, options]);
 
   useEffect(() => {
     fetchData();
