@@ -40,9 +40,9 @@ const Footer = () => {
                         
                     </div>
                     <div class="social-icons list-horizontal-direction">
-                        <a href="https://www.linkedin.com/in/vincent-adrian-quitoriano-062183322/"><img src={linkedInLogo} alt="" /></a>
-                        <a href="https://github.com/Dian-qit/"><img src={gitLogo} alt="" /></a>
-                        <a href=""><img src={instaLogo} alt="" /></a>
+                        <a href="https://www.linkedin.com/in/vincent-adrian-quitoriano-062183322/" target="blank"><img src={linkedInLogo} alt="" /></a>
+                        <a href="https://github.com/Dian-qit/" target="blank"><img src={gitLogo} alt="" /></a>
+                        <a href=""><img src={instaLogo} alt="" target="blank" /></a>
                     </div>
                 </div>
             </footer>

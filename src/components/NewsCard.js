@@ -26,7 +26,7 @@ const NewsCard = () => {
                                         }}
                                     />
                             </div>
-                            <div className="news-preview-right">
+                            <a href={news.source.url} target="blank" className="news-preview-right" style={{Color: '#0000'}}>
                                 <div className="news-preview-right-top">
                                     <h2 style={{
                                         fontSize: '16px',
@@ -55,11 +55,11 @@ const NewsCard = () => {
                                         width: '250px',
                                         maxHeight: '80px',
                                         overflow: 'hidden',
-                                        
+                                        color: '#000'
 
                                     }}>{news.description}</p>
                                 </div>
-                            </div>
+                            </a>
                         
                     </div>
                 ))}

@@ -1,8 +1,8 @@
 import { useFetch } from "../hooks/useFetch";
 
-const WeatherCard = () => {
+const WeatherCard = ({ city = "Manila" }) => {
     const apiKey = process.env.REACT_APP_WEATHER_KEY;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=Manila&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}`;
     
     const { data: weatherData, loading, error } = useFetch(url);
 
@@ -22,7 +22,6 @@ const WeatherCard = () => {
             )}
         </div>
     );
-     
 }
  
 export default WeatherCard;
