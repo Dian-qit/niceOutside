@@ -4,14 +4,7 @@ const NewsCard = () => {
     const apiKey = process.env.REACT_APP_NEWS_KEY;
     const url = `https://newsapi.org/v2/top-headlines?q=Weather&sortBy=publishedAt&apiKey=${apiKey}`;
     
-    const options = {
-        headers: {
-        'Accept': 'application/json',
-        'User-Agent': 'Mozilla/5.0'
-        }
-    };
-
-    const { data, loading, error } = useFetch(url, options);
+    const { data, loading, error } = useFetch(url);
     const articles = data?.articles || [];
 
     return (
