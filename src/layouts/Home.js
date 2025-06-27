@@ -15,7 +15,11 @@ const Home = () => {
 
     return ( 
         <div className="home">
-            <div className="home-container background">
+            <div className="home-container background" style={{
+                backgroundPosition: 'top center',
+                backgroundPosition: 'bottom center',
+                height: '450px'
+            }}>
                 <div className="hero-section">
                     <div className="content">
                         <div className="left-side">
