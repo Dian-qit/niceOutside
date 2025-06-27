@@ -14,11 +14,53 @@ const NewsCard = () => {
             {articles.length > 0 &&
                 articles.map((news) => (
                     <div className="news-preview" key={news.url}>
-                        <a href={news.url} target="_blank" rel="noopener noreferrer">
-                            <h2>{news.title}</h2>
-                            <p>{news.source.name}</p>
-                            <p>{news.source.url}</p>
-                        </a>
+                        
+                            <div className="news-preview-left" >
+                                <img 
+                                        src={news.image} 
+                                        alt={news.title}
+                                        style={{
+                                            width: '265px',
+                                            height: '100%',
+                                            objectFit: 'cover'
+                                        }}
+                                    />
+                            </div>
+                            <div className="news-preview-right">
+                                <div className="news-preview-right-top">
+                                    <h2 style={{
+                                        fontSize: '16px',
+                                        display: '-webkit-box',
+                                        WebkitLineClamp: 2,           // Limits to 3 lines
+                                        WebkitBoxOrient: 'vertical',
+                                        textOverflow: 'ellipsis',
+                                        width: '250px',
+                                        margin: '0',
+                                        height: 'auto',
+                                        overflow: 'hidden'
+                                        }}>{news.title}</h2>
+                                    <p style={{
+                                        fontSize: '12px',
+                                        margin: '0',
+                                        color: '#939599'
+                                    }}>{news.source.name}</p>
+                                </div>
+                                <div className="news-preview-right-bottom">
+                                    <p style={{
+                                        fontSize: '12px',
+                                        display: '-webkit-box',
+                                        WebkitLineClamp: 3,           // Limits to 3 lines
+                                        WebkitBoxOrient: 'vertical',
+                                        textOverflow: 'ellipsis',
+                                        width: '250px',
+                                        maxHeight: '80px',
+                                        overflow: 'hidden',
+                                        
+
+                                    }}>{news.description}</p>
+                                </div>
+                            </div>
+                        
                     </div>
                 ))}
         </div>

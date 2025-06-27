@@ -27,7 +27,7 @@ const Home = () => {
             </div>   
             <div className="news-section">
                 <div className="new-content">
-                    <h1>Latest News</h1>
+                    <h1>Latest Weather <br /> News</h1>
                     <NewsCard />
                 </div>
             </div>
