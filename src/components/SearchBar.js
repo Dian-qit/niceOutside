@@ -38,7 +38,8 @@ const SearchBar = ({ onSearch, loading }) => {
                     outline: 'none',
                     fontSize: '18px',
                     color: '#000',
-                    width: '100%'
+                    width: '100%',
+                    backgroundColor: '#F5FAFF'
                 }}
             />
             {loading && <p className="search-status">Searching...</p>}
