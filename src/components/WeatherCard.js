@@ -86,9 +86,15 @@ const WeatherCard = ({ city = "Manila" }) => {
                 </div>
                 <div className="weather-right">
                     <div className="weather-value">
-                        <p className="text-align-right">{currentForecast.main.humidity}%</p>
-                        <p className="text-align-right">{currentForecast.clouds.all}%</p>
-                        <p className="text-align-right">{currentForecast.wind.speed}km/h</p>
+                        {currentForecast ? (
+                        <>
+                            <p className="text-align-right">{currentForecast.main.humidity}%</p>
+                            <p className="text-align-right">{currentForecast.clouds.all}%</p>
+                            <p className="text-align-right">{currentForecast.wind.speed}km/h</p>
+                        </>
+                        ) : (
+                    !loading && <p>No weather data available</p>
+                )}
                     </div>
                     <div className="weather-icons">
                         <img src={humidity} alt="" />
