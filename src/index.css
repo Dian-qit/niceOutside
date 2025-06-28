@@ -21,6 +21,7 @@
 .semibold-text { font-weight: 600; }
 .bold-text { font-weight: 700; }
 .no-margin {margin: 0;}
+.text-align-right{text-align: right;}
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -200,7 +201,7 @@ a{
   padding: 1rem 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 355px;
-  height: 520px;
+  height: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -221,6 +222,40 @@ a{
 .weather-top-contents{
   padding: 2rem;
   gap: 0;
+}
+
+.weather-center-contents{
+  display: flex;
+  justify-content: space-between;
+  width: 21.5rem;
+}
+
+.weather-right{
+  display: flex;
+  gap: .2rem;
+}
+
+.weather-icons{
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+  justify-content: center;
+}
+
+
+.hourly-forecast{
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: .3rem;
+  width: 21.5rem;
+  flex-direction: row;
+}
+
+.hourly-forecast::-webkit-scrollbar {
+    display: none;
 }
 
 .news-section{
