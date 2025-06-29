@@ -5,13 +5,16 @@ import wind from "../assets/icons/Wind.svg"
 
 const WeatherCard = ({ city = "Manila" }) => {
     const apiKey = process.env.REACT_APP_WEATHER_KEY;
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(city)}&appid=${apiKey}`;
-    const { data: forecastData, loading, error } = useFetch(url);
-
+    
+    const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
+    const { data: currentWeatherData, loading: currentLoading, error: currentError } = useFetch(currentWeatherUrl);
+    
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(city)}&appid=${apiKey}`;
+    const { data: forecastData, loading: forecastLoading, error: forecastError } = useFetch(forecastUrl);
 
     const getLocalTime = (dt, timezone, includeDate = false) => {
-        const utcTime = new Date(dt * 1000);
-        const localTime = new Date(utcTime.getTime() + (timezone * 1000));
+        
+        const localTime = new Date(dt * 1000);
         
         const options = {
             hour: '2-digit',
@@ -24,15 +27,7 @@ const WeatherCard = ({ city = "Manila" }) => {
             options.day = 'numeric';
         }
         
-        return localTime.toLocaleTimeString('en-US', options);
-    };
-
-
-    const getCurrentForecast = () => {
-        if (!forecastData || !forecastData.list || forecastData.list.length === 0) {
-            return null;
-        }
-        return forecastData.list[0];
+        return localTime.toLocaleString('en-US', options);
     };
 
     const getNextHourlyForecasts = (count = 3) => {
@@ -40,35 +35,37 @@ const WeatherCard = ({ city = "Manila" }) => {
             return [];
         }
         
-        return forecastData.list.slice(1, count + 1);
+        
+        return forecastData.list.slice(0, count);
     };
 
-    const currentForecast = getCurrentForecast();
     const nextForecasts = getNextHourlyForecasts();
+    const loading = currentLoading || forecastLoading;
+    const error = currentError || forecastError;
 
     return ( 
         <div className="weather-card">
             <div className="weather-top background">
-                {currentForecast ? (
+                {currentWeatherData ? (
                     <>  
                         {loading && <p>Loading...</p>}
                         {error && <p style={{ color: "red" }}>{error}</p>}  
                         <div className="weather-top-contents">
                             <div className="weather-content-top">
-                                <h3 className="no-margin">{forecastData.city.name}</h3>
+                                <h3 className="no-margin">{currentWeatherData.name}</h3>
                                 <p className="no-margin text-medium" style={{color: 'rgba(0, 0, 0, 0.66)'}}>
-                                    {getLocalTime(currentForecast.dt, forecastData.city.timezone, true)}
+                                    {getLocalTime(currentWeatherData.dt, currentWeatherData.timezone, true)}
                                 </p>
                             </div>
                             <div className="weather-content-bottom">
                                 <p className="size-display no-margin"> 
-                                    {(currentForecast.main.temp - 273.15).toFixed(1)}° 
+                                    {currentWeatherData.main.temp.toFixed(1)}° 
                                 </p>
                                 <p className="no-margin text-semi-bold" style={{fontSize: '20px'}}>
-                                    {currentForecast.weather[0].main}
+                                    {currentWeatherData.weather[0].main}
                                 </p>
                                 <p className="no-margin text-small" style={{color: 'rgba(0, 0, 0, 0.66)'}}>
-                                    Feels like {(currentForecast.main.feels_like - 273.15).toFixed(1)}°
+                                    Feels like {currentWeatherData.main.feels_like.toFixed(1)}°
                                 </p>
                             </div>
                         </div>
@@ -86,11 +83,11 @@ const WeatherCard = ({ city = "Manila" }) => {
                 </div>
                 <div className="weather-right">
                     <div className="weather-value">
-                        {currentForecast ? (
+                        {currentWeatherData ? (
                         <>
-                            <p className="text-align-right">{currentForecast.main.humidity}%</p>
-                            <p className="text-align-right">{currentForecast.clouds.all}%</p>
-                            <p className="text-align-right">{currentForecast.wind.speed}km/h</p>
+                            <p className="text-align-right">{currentWeatherData.main.humidity}%</p>
+                            <p className="text-align-right">{currentWeatherData.clouds.all}%</p>
+                            <p className="text-align-right">{currentWeatherData.wind.speed}km/h</p>
                         </>
                         ) : (
                     !loading && <p>No weather data available</p>
@@ -105,7 +102,7 @@ const WeatherCard = ({ city = "Manila" }) => {
             </div>
             
             <div className="weather-bottom-contents">
-                {nextForecasts.length > 0 && (
+                {nextForecasts.length > 0 && forecastData && (
                     <>
                         <h4 className="no-margin" style={{marginBottom: '10px', color: 'rgba(0, 0, 0, 0.8)'}}>
                             Next Hours
