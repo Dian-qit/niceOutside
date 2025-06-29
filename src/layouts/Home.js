@@ -1,11 +1,12 @@
-import { useState } from 'react';  // Add this import
+import { useState } from 'react';
 import NewsCard from "../components/NewsCard";
 import WeatherCard from "../components/WeatherCard";
-import SearchBar from "../components/SearchBar";  // Add this import
+import SearchBar from "../components/SearchBar";
 
 const Home = () => {
     const [city, setCity] = useState('Manila');
     const [isSearching, setIsSearching] = useState(false);
+    const [backgroundImage, setBackgroundImage] = useState(null); 
 
     const handleSearch = (searchCity) => {
         setIsSearching(true);
@@ -13,12 +14,18 @@ const Home = () => {
         setTimeout(() => setIsSearching(false), 1000);
     };
 
+    const handleWeatherChange = (newBackgroundImage) => {
+        setBackgroundImage(newBackgroundImage);
+    };
+
     return ( 
         <div className="home">
-            <div className="home-container background" style={{
-                backgroundPosition: 'top center',
+            <div className="home-container" style={{
+                backgroundImage: backgroundImage, 
                 backgroundPosition: 'bottom center',
-                height: '450px'
+                backgroundSize: 'cover',
+                height: '450px',
+                transition: 'background-image 0.5s ease-in-out'
             }}>
                 <div className="hero-section">
                     <div className="content">
@@ -26,15 +33,19 @@ const Home = () => {
                             <div className="slogan">
                                 <div className="slogan-top">
                                     <h1 className="size-display" style={{margin:0}}>Weather Made Simple</h1>
-                                <p className="size-large-title bold-text" style={{margin:0}}>See if it's <span className="brand brand-color">Nice Outside.</span></p>
+                                    <p className="size-large-title bold-text" style={{margin:0}}>
+                                        See if it's <span className="brand brand-color">Nice Outside.</span>
+                                    </p>
                                 </div>
                                 <SearchBar onSearch={handleSearch} loading={isSearching} />
                             </div>
-                            
                         </div>
 
                         <div className="right-side">
-                            <WeatherCard city={city} />
+                            <WeatherCard 
+                                city={city} 
+                                onWeatherChange={handleWeatherChange} 
+                            />
                         </div>
                     </div>
                 </div>
