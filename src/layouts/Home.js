@@ -2,11 +2,14 @@ import { useState } from 'react';
 import NewsCard from "../components/NewsCard";
 import WeatherCard from "../components/WeatherCard";
 import SearchBar from "../components/SearchBar";
+import Navbar from "../layouts/Navbar"; 
 
 const Home = () => {
     const [city, setCity] = useState('Manila');
     const [isSearching, setIsSearching] = useState(false);
-    const [backgroundImage, setBackgroundImage] = useState(null); 
+    const [backgroundImage, setBackgroundImage] = useState(null);
+    const [textColor, setTextColor] = useState('#000000');
+    const [navbarBg, setNavbarBg] = useState('rgba(255, 255, 255, 0.1)'); // Add navbar background state
 
     const handleSearch = (searchCity) => {
         setIsSearching(true);
@@ -14,12 +17,17 @@ const Home = () => {
         setTimeout(() => setIsSearching(false), 1000);
     };
 
-    const handleWeatherChange = (newBackgroundImage) => {
+    const handleWeatherChange = (newBackgroundImage, newNavbarBg, newTextColor) => {
         setBackgroundImage(newBackgroundImage);
+        setNavbarBg(newNavbarBg);
+        setTextColor(newTextColor);
     };
 
     return ( 
         <div className="home">
+            {/* Add Navbar component with props */}
+            <Navbar textColor={textColor} navbarBg={navbarBg} />
+            
             <div className="home-container" style={{
                 backgroundImage: backgroundImage, 
                 backgroundPosition: 'bottom center',
@@ -32,8 +40,16 @@ const Home = () => {
                         <div className="left-side">
                             <div className="slogan">
                                 <div className="slogan-top">
-                                    <h1 className="size-display" style={{margin:0}}>Weather Made Simple</h1>
-                                    <p className="size-large-title bold-text" style={{margin:0}}>
+                                    <h1 className="size-display" style={{
+                                        margin: 0,
+                                        color: textColor,
+                                    }}>
+                                        Weather Made Simple
+                                    </h1>
+                                    <p className="size-large-title bold-text" style={{
+                                        margin: 0,
+                                        color: textColor,
+                                    }}>
                                         See if it's <span className="brand brand-color">Nice Outside.</span>
                                     </p>
                                 </div>

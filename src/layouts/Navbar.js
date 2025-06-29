@@ -1,42 +1,44 @@
 import BrandLogo from "../components/BrandLogo";
 import logo from '../assets/img/Logo.png';
 
-const Navbar = () => {
+const Navbar = ({ textColor = '#000000', navbarBg = 'rgba(255, 255, 255, 0.1)' }) => {
     return ( 
-            <div className="nav-bar">
-                <nav class="nice-outside-nav">
-                <div class="nav-container">
+        <div className="nav-bar">
+            <nav className="nice-outside-nav" style={{
+                backgroundColor: navbarBg,
+                transition: 'background-color 0.5s ease-in-out'
+            }}>
+                <div className="nav-container">
                    
-                   <a href="#" class="nav-logo">
-                        <img src={logo} class="logo-size" alt="wewe" />
-                        <span class="logo-text bold-text">NiceOutside</span>
+                    <a href="#" className="nav-logo">
+                        <img src={logo} className="logo-size" alt="wewe" />
+                        <span className="logo-text bold-text" style={{color: textColor}}>NiceOutside</span>
                     </a>
                     
-                    <div class="nav-links">
-                        <a href="#" class="nav-link active">
-                            <i class="ri-home-5-line"></i>
-                            <span class="size-body">Home</span>
+                    <div className="nav-links">
+                        <a href="#" className="nav-link active">
+                            <i className="ri-home-5-line" style={{color: textColor}}></i>
+                            <span className="size-body" >Home</span>
                         </a>
-                        <a href="#" class="nav-link">
-                            <i class="ri-information-line"></i>
-                            <span class="size-body">News</span>
+                        <a href="#" className="nav-link">
+                            <i className="ri-information-line" style={{color: textColor}}></i>
+                            <span className="size-body" style={{color: textColor}}>News</span>
                         </a>
-                        <a href="#" class="nav-link">
-                            <i class="ri-stack-line"></i>
-                            <span class="size-body">About</span>
+                        <a href="#" className="nav-link">
+                            <i className="ri-stack-line" style={{color: textColor}}></i>
+                            <span className="size-body" style={{color: textColor}}>About</span>
                         </a>
-                        
                     </div>
 
-                    <div class="nav-actions">
-                        <button class="button-style bold-text" aria-label="Toggle theme">
+                    <div className="nav-actions">
+                        <button className="button-style bold-text" aria-label="Toggle theme">
                             Check Weather
                         </button>
                     </div>
                 </div>
-             </nav>
-            </div>
-     );
+            </nav>
+        </div>
+    );
 }
  
 export default Navbar;

@@ -29,7 +29,6 @@ const WeatherCard = ({ city = "Manila", onWeatherChange }) => {
         return currentTime >= sunrise && currentTime < sunset;
     };
 
-    // Function to get text color and navbar background based on weather
     const getWeatherStyles = (weatherData) => {
         if (!weatherData) return {
             textColor: '#000000',
@@ -42,7 +41,6 @@ const WeatherCard = ({ city = "Manila", onWeatherChange }) => {
         const sunset = weatherData.sys.sunset;
         const isDayTime = isDay(currentTime, sunrise, sunset);
         
-        // Define which conditions should have white text
         const whiteTextConditions = [
             { condition: 'clear', time: 'night' },
             { condition: 'rain', time: 'day' },
@@ -108,12 +106,12 @@ const WeatherCard = ({ city = "Manila", onWeatherChange }) => {
     };
 
     useEffect(() => {
-        if (currentWeatherData && onWeatherChange) {
-            const backgroundImage = getBackgroundImage(currentWeatherData);
-            const styles = getWeatherStyles(currentWeatherData);
-            onWeatherChange(backgroundImage, styles.navbarBg);
-        }
-    }, [currentWeatherData, onWeatherChange]);
+    if (currentWeatherData && onWeatherChange) {
+        const backgroundImage = getBackgroundImage(currentWeatherData);
+        const styles = getWeatherStyles(currentWeatherData);
+        onWeatherChange(backgroundImage, styles.navbarBg, styles.textColor);
+    }
+}, [currentWeatherData, onWeatherChange]);
 
     const getLocalTime = (dt, timezone, includeDate = false) => {
         const localTime = new Date(dt * 1000);
