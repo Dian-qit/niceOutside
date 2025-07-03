@@ -16,14 +16,10 @@ const NewsCard = () => {
                     <div className="news-preview" key={news.url}>
                         
                             <div className="news-preview-left" >
-                                <img 
+                                <img    
                                         src={news.image} 
                                         alt={news.title}
-                                        style={{
-                                            width: '265px',
-                                            height: '100%',
-                                            objectFit: 'cover'
-                                        }}
+                                        className="news-preview-img"
                                     />
                             </div>
                             <a href={news.source.url} target="blank" className="news-preview-right" style={{Color: '#0000'}}>
@@ -34,7 +30,7 @@ const NewsCard = () => {
                                         WebkitLineClamp: 2,           // Limits to 3 lines
                                         WebkitBoxOrient: 'vertical',
                                         textOverflow: 'ellipsis',
-                                        width: '250px',
+                                        width: 'auto',
                                         margin: '0',
                                         height: 'auto',
                                         overflow: 'hidden'

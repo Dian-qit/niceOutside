@@ -4,7 +4,7 @@
     --primary-color: #6668EA;
     --dark-text-color: #000000;
     --light-text-color: #ffffff;
-    --bg-color: #F5FAFF;
+    --bg-color: # ;
     --bg-black: rgba(0, 0, 0, 0.1);
     --bg-white: rgba(255, 255, 255, 0.1);
     --background-img: url(assets/img/clear-day.jpg);
@@ -134,11 +134,14 @@ a{
 .home{
   height: auto;
 }
-.background{
-  background-image: var(--background-img);
-  background-repeat: no-repeat;
+
+.home-container{
+  background-position: bottom center;
   background-size: cover;
+  height: 450;
+  transition: 0.5s ease-in-out;
 }
+
 
 .hero-section {
   display: flex;
@@ -356,7 +359,7 @@ a{
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
   gap: 2rem;
-  width: 1200px;
+  max-width: 1200px;
 }
 
 .news-card > .news-preview:first-child{
@@ -376,15 +379,141 @@ a{
   overflow: hidden;
 }
 
+.news-preview-img{
+  width: 265px;
+  height: 100%;
+  object-fit: cover;
+}
 .news-preview-left{
   height: 195px;
   width: 265px;
   
 }
 
+.news-preview-right{
+  align-content: center;
+}
+
 .news-preview-right-top{
   min-height: 80px;
-  margin: 1rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   color: var(--dark-text-color);
+}
+
+@media (max-width: 480px) {
+
+  .nav-container{
+    max-width: 480px;
+    width: auto;
+    flex-direction: column;
+  }
+
+  .nice-outside-nav{
+    max-width: 480px;
+    width: auto;
+  }
+
+  .nav-link{
+    visibility: hidden;
+  }
+
+  .home{
+    height: auto;
+  }
+
+  .home-container{
+    background-position: top ;
+  }
+
+  .hero-section{
+    max-width: 480px;
+    width: auto;
+    height: auto;
+    justify-content: center;
+  }
+
+  .content{
+    max-width: 480px;
+    width: auto;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 5rem 0;
+  }
+
+  .left-side{
+    height: 100px;
+  }
+
+  .slogan-top h1{
+    font: 16px;
+  }
+
+  .search-bar{
+    width: auto;
+  }
+
+  .right-side{
+    padding: 0;
+    position: static;
+    padding: 0;
+    top: auto;
+  }
+
+  .news-section{
+    max-width: 480px;
+    width: auto;
+  }
+  .news-card{
+    max-width: 480px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .news-card > .news-preview:first-child{
+    flex-direction: column;
+  }
+  
+  .news-preview{
+    flex-direction: row;
+    height: auto;
+    width: auto;
+  }
+
+  .news-preview-left{
+    width: 180px
+  }
+
+  .news-preview-img{
+    width: 180px;
+  }
+
+  .news-preview-right-top{
+    
+  }
+ 
+  .site-footer{
+    max-width: 480px;
+    width: auto;
+    flex-direction: column;
+  }
+
+  .footer-left{
+    padding: 0;
+    height: auto;
+  }
+  .footer-right{
+    padding: 0;
+  }
+
+  .footer-links{
+    margin: 0;
+    height: auto;
+    justify-content: center;
+    padding: 0 2rem;
+  }
+
+  .social-icons{
+    padding:1rem 2rem;
+  }
 }

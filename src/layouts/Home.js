@@ -30,10 +30,6 @@ const Home = () => {
             
             <div className="home-container" style={{
                 backgroundImage: backgroundImage, 
-                backgroundPosition: 'bottom center',
-                backgroundSize: 'cover',
-                height: '450px',
-                transition: 'background-image 0.5s ease-in-out'
             }}>
                 <div className="hero-section">
                     <div className="content">
