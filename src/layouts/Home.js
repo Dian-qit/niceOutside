@@ -36,7 +36,7 @@ const Home = () => {
                         <div className="left-side">
                             <div className="slogan">
                                 <div className="slogan-top">
-                                    <h1 className="size-display" style={{
+                                    <h1 className="size-display size-display-tablet" style={{
                                         margin: 0,
                                         color: textColor,
                                     }}>
