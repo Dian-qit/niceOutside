@@ -130,7 +130,7 @@ const WeatherCard = ({ city = "Manila", onWeatherChange }) => {
         return localTime.toLocaleString('en-US', options);
     };
 
-    const getNextHourlyForecasts = (count = 3) => {
+    const getNextHourlyForecasts = (count = 5) => {
         if (!forecastData || !forecastData.list || forecastData.list.length === 0) {
             return [];
         }
@@ -249,7 +249,7 @@ const WeatherCard = ({ city = "Manila", onWeatherChange }) => {
                         }}>
                             Next Hours
                         </h4>
-                        <div className="hourly-forecast" style={{justifyContent: 'center'}}>
+                        <div className="hourly-forecast">
                             {nextForecasts.map((forecast, index) => (
                                 <div key={index} className="hourly-item" style={{
                                     minWidth: '70px',
