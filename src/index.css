@@ -669,6 +669,13 @@ a{
 
 @media (max-width: 480px) {
 
+  h1{
+    width: auto !important;
+  }
+
+  p{
+    width: auto !important;
+  }
   .nav-container{
     max-width: 480px;
     width: 100%;
@@ -683,10 +690,6 @@ a{
 
   .nav-button{
     width: 10px;
-  }
-
-  .nav-link{
-    visibility: hidden;
   }
 
   .home{
@@ -711,7 +714,11 @@ a{
   }
 
   .slogan-top h1{
-    font: 16px;
+    font-size: 2.5rem !important;
+  }
+
+  .slogan-top p{
+    font-size: 2rem !important;
   }
 
   .search-bar{
@@ -782,4 +789,29 @@ a{
     width: 100%;
   }
   
+}
+
+@media (max-width: 400px) {
+  .slogan-top h1{
+    font-size: 2.3rem !important;
+  }
+
+  .slogan-top p{
+    font-size: 1.5rem !important;
+  }
+
+  .weather-card{
+    width: 100%;
+    max-width: 15rem;
+  }
+
+  .news-preview{
+    max-width: 320px;
+    height: 180px;
+  }
+
+  .news-preview-left{
+    max-width: 150px;
+    min-width: 100px;
+  }
 }
