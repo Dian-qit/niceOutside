@@ -486,16 +486,19 @@ a{
   }
 
   .weather-top{
-    width: auto;
-    min-width: 30rem;
+    width: 100%;
+    max-width: 30rem;
   }
 
   .weather-center-contents{
-    min-width: 30rem;
+    width: 100%;
+    max-width: 30rem;
   }
 
   .weather-bottom-contents{
-    min-width: 30rem;
+    width: 100%;
+    max-width: 30rem;
+    overflow: hidden;
   }
 
   .hourly-forecast{
@@ -545,6 +548,7 @@ a{
 
   .news-preview-left{
     width: auto;
+    min-width: 284px;
   }
 
   .news-preview-img{
@@ -622,17 +626,63 @@ a{
   
 }
 
+@media (max-width: 690px) {
+
+  .right-side{
+    width: auto;
+  }
+
+  .new-content{
+    padding: 0;
+  }
+
+  .site-footer{
+    flex-direction: column  ;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .weather-card{
+    width: 20rem;
+  }
+
+  .new-content{
+    padding: 1rem;
+  }
+  .news-preview{
+    width: auto;
+  }
+
+  .news-preview-left{
+    min-width: 200px;
+    max-width: 200px;
+  }
+
+  .news-preview:first-child .news-preview-left{
+    width: 100%;
+    max-width: 100%;
+  }
+
+  
+}
+
 @media (max-width: 480px) {
 
   .nav-container{
     max-width: 480px;
-    width: auto;
-    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;  
   }
 
   .nice-outside-nav{
     max-width: 480px;
     width: auto;
+  }
+
+  .nav-button{
+    width: 10px;
   }
 
   .nav-link{
@@ -687,7 +737,7 @@ a{
   }
   
   .new-content{
-    width: 40rem;
+    padding: 0;
   }
 
   .news-card > .news-preview:first-child{
@@ -698,22 +748,38 @@ a{
   .news-preview{
     flex-direction: row;
     height: auto;
-    width: auto;
+    width: 100%;
+    max-width: 400px;
   }
 
   .news-preview-left{
-    width: 180px
+    width: 100%;
   }
 
   .news-preview-img{
-    width: 180px;
+    width: 100%;
   }
 
-  .news-preview-right-top{
-    
+  .news-preview-right{
+    max-width: 200px;
+    width: 100%;
   }
+
+ .news-preview-right-bottom p{
+    width: 100%;
+
+ }
  
-  
+ .news-preview:first-child .news-preview-right{
+   max-width: 100%;
 
+ }
+  .footer-links{
+    width: 100px;
+  }
+
+  .footer-right{
+    width: 100%;
+  }
   
 }
