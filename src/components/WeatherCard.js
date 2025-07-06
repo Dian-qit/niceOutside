@@ -56,7 +56,7 @@ const WeatherCard = ({ city = "Manila", onWeatherChange }) => {
         
         return {
             textColor: shouldUseWhiteText ? '#FFFFFF' : '#000000',
-            navbarBg: isDayTime ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.3)'
+            navbarBg: isDayTime ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'
         };
     };
 

@@ -8,7 +8,7 @@ const NewsCard = () => {
     const articles = data?.articles || [];
 
     return (
-        <div className="news-card">
+        <div className="news-card" id="news">
             {loading && <p>Loading news...</p>}
             {error && <p style={{ color: "red" }}>{error}</p>}
             {articles.length > 0 &&

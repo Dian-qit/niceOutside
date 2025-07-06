@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 :root {
     --primary-color: #6668EA;
     --dark-text-color: #000000;
@@ -434,11 +439,7 @@ a{
   .nav-links{
     gap: 3rem;
   }
-
-  .content{
-    
-  }
-
+  
   .search-bar{
     width: auto;
   }
@@ -591,7 +592,7 @@ a{
     left: 0;
     right: 0;
     backdrop-filter: blur(20px);
-    background: rgba(0, 0, 0, 0.3); 
+    background: rgba(255, 255, 255, 0.4); 
     padding: 1rem;
     flex-direction: column;
     gap: 1rem;
@@ -601,9 +602,9 @@ a{
     transition: all 0.3s ease;
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    
+    height: 100vh;
   }
-
+  
   .nav-links.active {
     transform: translateY(0);
     opacity: 1;

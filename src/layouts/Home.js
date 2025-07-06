@@ -28,7 +28,7 @@ const Home = () => {
             {/* Add Navbar component with props */}
             <Navbar textColor={textColor} navbarBg={navbarBg} />
             
-            <div className="home-container" style={{
+            <div className="home-container" id='home' style={{
                 backgroundImage: backgroundImage, 
             }}>
                 <div className="hero-section">
@@ -62,7 +62,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>   
-            <div className="news-section">
+            <div className="news-section" id='news'>
                 <div className="new-content">
                     <h1>Latest Weather <br /> News</h1>
                     <NewsCard />
