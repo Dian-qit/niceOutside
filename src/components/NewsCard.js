@@ -8,7 +8,7 @@ const NewsCard = () => {
     const articles = data?.articles || [];
 
     return (
-        <div className="news-card" id="news">
+        <div className="news-card" >
             {loading && <p>Loading news...</p>}
             {error && <p style={{ color: "red" }}>{error}</p>}
             {articles.length > 0 &&
@@ -22,7 +22,7 @@ const NewsCard = () => {
                                         className="news-preview-img"
                                     />
                             </div>
-                            <a href={news.source.url} target="blank" className="news-preview-right" style={{Color: '#0000'}}>
+                            <a href="#" target="blank" className="news-preview-right" style={{Color: '#0000'}}>
                                 <div className="news-preview-right-top">
                                     <h2 style={{
                                         fontSize: '16px',
