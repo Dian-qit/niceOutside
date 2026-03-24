@@ -22,7 +22,7 @@ const NewsCard = () => {
                                         className="news-preview-img"
                                     />
                             </div>
-                            <a href="#" target="blank" className="news-preview-right" style={{Color: '#0000'}}>
+                            <a href={news.url} target="_blank" className="news-preview-right" style={{Color: '#0000'}}>
                                 <div className="news-preview-right-top">
                                     <h2 style={{
                                         fontSize: '16px',
